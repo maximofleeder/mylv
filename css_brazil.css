@@ -22,7 +22,7 @@ p {
 	text-align: left;
 	font-style: italic;
 	font-weight: bold;
-	font-family: Bodoni, serif;
+	font-family: Georgia, serif;
 	color: black;
 	line-height: 2;
 	border: 3px solid darkblue;
@@ -35,8 +35,8 @@ p {
 }
 ul, ol {
 	font-size: 80%;
-	font-style: strong;
-	font-family: Calibri, sans-serif;
+	font-weight: bold;
+	font-family: Verdana, sans-serif;
 }
 img {
 	border-radius: 5px;

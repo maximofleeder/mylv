@@ -1,0 +1,45 @@
+/* http://www.color-hex.com/color */
+h1 {
+	color: #008b09; /* dark green */
+}
+h2 {
+	color: #00108b; /* dark blue */
+}
+h3 {
+	color: black;
+}
+body {
+    background-color: #ffff6c;
+}
+p {
+		
+	font-style: normal;
+	font-size: 1em;
+	font-weight: normal;
+	font-family: Georgia, serif;
+}
+#box {
+	text-align: left;
+	font-style: italic;
+	font-weight: bold;
+	font-family: Bodoni, serif;
+	color: black;
+	line-height: 2;
+	border: 3px solid darkblue;
+	border-left: 5px solid #008b09;
+	border-top: 5px solid #008b09;
+	padding: 40px 10px 20px 10px;
+	margin: 40px;
+	border-radius: 35px 35px 0px 0px;
+	box-shadow: 5px 15px 15px 9px rgba(50, 50, 50, 0.8)
+}
+ul, ol {
+	font-size: 80%;
+	font-style: strong;
+	font-family: Calibri, sans-serif;
+}
+img {
+	border-radius: 5px;
+}
+
+

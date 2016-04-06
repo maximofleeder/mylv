@@ -117,8 +117,9 @@
             "Geoland Basemap High DPI" : layers.bmaphidpi,
             "Geoland Basemap Orthofoto" : layers.bmaporthofoto30cm
         }).addTo(map)
-        L.control.scale({
-            'imperial' : false
+        
+		L.control.scale({
+            'metric' : true
         }).addTo(map);
 	
     </script>

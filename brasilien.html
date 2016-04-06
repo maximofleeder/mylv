@@ -4,7 +4,7 @@
 <title>Exkursion nach Brasilien</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css_brazil.css"></link>
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"/>
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 </head>
 
@@ -48,9 +48,60 @@
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'
         }).addTo(map);
+		
+		var marker1 = L.marker([-8.758611, -63.881944]).addTo(map);
+		marker1.bindPopup('<h2>Rondônia</h2><p>Bem-vindo ao Porto Velho!</br></br>Porto Velho ist die Hauptstadt des brasilianischen Bundesstaates Rondônia. Die Stadt hat rund 500.000 EinwohnerInnen.</p>')
+		var marker2 = L.marker([-10.951944, -61.951667]).addTo(map);
+		marker2.bindPopup('<h2>Rondônia</h2><p>Hier ist Ji-Paraná</p>')
+		var marker3 = L.marker([-9.971111, -67.811111]).addTo(map);
+		marker3.bindPopup('<h2>Acre</h2><p>Hier ist Rio Branco</p>')
     </script>
 </p>
+
+<p>
+<div id="map2" style="width:900px;height:600px"></div>
+    <script>
+		var layers = { // http://www.basemap.at/wmts/1.0.0/WMTSCapabilities.xml
+            geolandbasemap : L.tileLayer("http://{s}.wien.gv.at/basemap/geolandbasemap/normal/google3857/{z}/{y}/{x}.png", {
+                subdomains : ['maps', 'maps1', 'maps2', 'maps3', 'maps4'],
+                attribution : 'Datenquelle: <a href="http://www.basemap.at/">basemap.at</a>'
+            }),
+            bmapoverlay : L.tileLayer("http://{s}.wien.gv.at/basemap/bmapoverlay/normal/google3857/{z}/{y}/{x}.png", {
+                subdomains : ['maps', 'maps1', 'maps2', 'maps3', 'maps4'],
+                attribution : 'Datenquelle: <a href="http://www.basemap.at/">basemap.at</a>'
+            }),
+            bmapgrau : L.tileLayer("http://{s}.wien.gv.at/basemap/bmapgrau/normal/google3857/{z}/{y}/{x}.png", {
+                subdomains : ['maps', 'maps1', 'maps2', 'maps3', 'maps4'],
+                attribution : 'Datenquelle: <a href="http://www.basemap.at/">basemap.at</a>'
+            }),
+            bmaphidpi : L.tileLayer("http://{s}.wien.gv.at/basemap/bmaphidpi/normal/google3857/{z}/{y}/{x}.jpeg", {
+                subdomains : ['maps', 'maps1', 'maps2', 'maps3', 'maps4'],
+                attribution : 'Datenquelle: <a href="http://www.basemap.at/">basemap.at</a>'
+            }),
+            bmaporthofoto30cm : L.tileLayer("http://{s}.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{z}/{y}/{x}.jpeg", {
+                subdomains : ['maps', 'maps1', 'maps2', 'maps3', 'maps4'],
+                attribution : 'Datenquelle: <a href="http://www.basemap.at/">basemap.at</a>'
+            })
+        };
+        var map = L.map('map2', {
+            layers : [layers.geolandbasemap],
+            center : [47.264269, 11.385312],
+            zoom : 16
+        });
+        L.control.layers({
+            "Geoland Basemap" : layers.geolandbasemap,
+            "Geoland Basemap Overlay" : layers.bmapoverlay,
+            "Geoland Basemap Grau": layers.bmapgrau,
+            "Geoland Basemap High DPI" : layers.bmaphidpi,
+            "Geoland Basemap Orthofoto" : layers.bmaporthofoto30cm
+        }).addTo(map)
+        L.control.scale({
+            'imperial' : false
+        }).addTo(map);
+	
+    </script>
 </p>
+
 <h2>Filmstudio</h2>
 <p>Rondônia in den 1970er-Jahren:</p>
 <p align="center">

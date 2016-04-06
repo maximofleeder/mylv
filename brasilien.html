@@ -86,9 +86,31 @@
         var map = L.map('map2', {
             layers : [layers.geolandbasemap],
             center : [47.264269, 11.385312],
-            zoom : 16
+            zoom : 15
         });
-        L.control.layers({
+        
+		var marker4 = L.marker([47.264269, 11.385312]).addTo(map);
+		marker4.bindPopup('<h2>Universität Innsbruck</h2><p>Geisteswissenschaftliche Fakultät</p>')
+		var marker5 = L.marker([47.26565244, 11.37296319]).addTo(map);
+		marker5.bindPopup('<h2>Zu Hause</h2><p>Hier wohnt Lukas Kindl</p>')
+		var marker6 = L.marker([47.26856278, 11.3936457]).addTo(map);
+		marker6.bindPopup('<h2>Prometheus Café</h2><p>Prometheus Keller</p>')
+		var marker7 = L.marker([47.26436376, 11.37413263]).addTo(map);
+		marker7.bindPopup('<h2>EKZ west</h2><p>Merkur Markt</p>')
+		var marker8 = L.marker([47.26054851, 11.37400389]).addTo(map);
+		marker8.bindPopup('<h2>ÖBB Bahnhof</h2><p>Bahnhof Innsbruck-Hötting</p>')
+		
+		var linie = L.polyline([
+			[47.26054851, 11.37400389],
+			[47.26565244, 11.37296319],
+			[47.26436376, 11.37413263],
+			[47.26856278, 11.3936457],
+			[47.264269, 11.385312]			
+			], {color: 'rgba(255,0,0,0.5', weight:10}).addTo(map);
+		
+		map.fitBounds(linie.getBounds());
+				
+		L.control.layers({
             "Geoland Basemap" : layers.geolandbasemap,
             "Geoland Basemap Overlay" : layers.bmapoverlay,
             "Geoland Basemap Grau": layers.bmapgrau,
